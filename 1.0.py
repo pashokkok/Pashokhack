@@ -4,7 +4,7 @@ from colorama import Fore, Back, Style
 # use Colorama to make Termcolor work on Windows too
 init()
 
-print( Back.RED )
+print( Fore.CYAN )
 
 print("█▄▀ ▄▀█ █░░ █▄▀ █░█ █░░ ▄▀█ ▀█▀ █▀█ █▀█")
 print("█░█ █▀█ █▄▄ █░█ █▄█ █▄▄ █▀█ ░█░ █▄█ █▀▄")
@@ -14,9 +14,14 @@ print ( Fore.RED )
 name = input ("----nickname----:")
 password = input ("----password----:")
 
-print ("----hello " + name + ", good morning =D----")
+if password == "gg":
+	print ("----hello " + name + ", good morning =D----")
+else:
+	print("Неверный пароль")
+	exit()
+
  
-what = input ("что делаем ? (+,-): " )
+what = input ("что делаем ? (+,-,*): " )
 
 a = float( input("----пожалуйста введите цифру----: ") )
 b = float( input("----пожалуйста введите цифру----: ") )
@@ -26,6 +31,9 @@ if what == "+":
 	print("----ваш результат: " + str(c) + "----")
 elif what == "-":
 	c = a - b
+	print("----ваш результат: " + str(c) + "----")
+elif what == "*":
+	c = a * b
 	print("----ваш результат: " + str(c) + "----")
 else:
 	print("----ты дебил----")
